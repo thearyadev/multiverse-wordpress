@@ -122,8 +122,10 @@ if ($configExtra = getenv_docker('WORDPRESS_CONFIG_EXTRA', '')) {
 	eval($configExtra);
 }
 
-define('WP_HOME', 'http://192.168.50.190:62312');
-define('WP_SITEURL', 'http://192.168.50.190:62312');
+define('WP_HOME', getenv_docker('PUBLIC_URI', "http://localhost:8080"));
+define('WP_SITEURL', getenv_docker('PUBLIC_URI', "http://localhost:8080"));
+
+
 
 /* That's all, stop editing! Happy publishing. */
 
