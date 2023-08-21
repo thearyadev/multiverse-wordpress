@@ -5,3 +5,6 @@ LABEL org.opencontainers.image.description="Docker image for multiverse-wordpres
 LABEL org.opencontainers.image.licenses=MIT
 
 COPY . /var/www/html/
+
+RUN chown -R www-data:www-data /var/www/html/
+RUN chmod -R 755 /var/www/html/
